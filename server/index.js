@@ -5,7 +5,8 @@ import dotenv from "dotenv"
 import cors from "cors"
 import postRoutes from "./routes/posts.js"
 
-
+// https://git.heroku.com/blogify-backend-de.git
+// https://blogify-backend-de.herokuapp.com/
 const app = express();
 dotenv.config();
 
@@ -33,8 +34,8 @@ mongoose
     useUnifiedTopology: true
 })
 .then(() => {
-   app.listen(PORT, () => {
-       console.log(`Server is running on port: ${PORT}`);
+   app.listen(process.env.PORT, () => {
+       console.log(`Server is running on port: ${process.env.PORT}`);
    })
 })
 .catch((error) => {
